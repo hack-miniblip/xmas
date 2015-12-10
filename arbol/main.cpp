@@ -1,3 +1,4 @@
+
 // miniblip led matrix demo
 
 #include "mbed.h"
@@ -66,6 +67,22 @@ void arbol(neopixel::Pixel* aux,int color, int color2){
     encenderLed(aux,22,5);    
     
 }
+
+void estrellapaga(neopixel::Pixel* aux, int color, int color2){
+    void_matrix(aux);
+    encenderLed(aux,2,0);
+    encenderLed(aux,7,3);    
+    encenderLed(aux,13,color2);
+    encenderLed(aux,12,3);
+    encenderLed(aux,11,color2);
+    encenderLed(aux,19,color);
+    encenderLed(aux,18,3);
+    encenderLed(aux,17,color);
+    encenderLed(aux,16,3);
+    encenderLed(aux,15,color);
+    encenderLed(aux,22,5);
+    
+    }
 void clear(neopixel::Pixel* aux){
     void_matrix(aux);
     encenderLed(aux,0,4);
@@ -88,7 +105,7 @@ int main() {
         
             arbol(vector,3,3);
             array.update(vector,25);
-		if(pushbutton){
+        if(pushbutton){
                 estrellapaga(vector,3,3);
                 array.update(vector,25);
                 wait_ms(500);
