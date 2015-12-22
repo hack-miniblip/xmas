@@ -63,14 +63,12 @@ int main() {
     
     
     while(true){
-        
-        
-        copos(vector,0);
-        array.update(vector,25);
-        wait_ms(500);    
-        copos(vector,3);
-        array.update(vector,25);
-        wait_ms(500);  
+      copos(vector,0);
+      array.update(vector,25);
+      wait_ms(500);
+      copos(vector,3);
+      array.update(vector,25);
+      wait_ms(500);
    
     }
     

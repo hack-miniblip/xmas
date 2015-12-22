@@ -10,7 +10,6 @@ AnalogIn   ain(ANALOG_POTENTIOMETER);
 //DigitalIn pushbutton(P0_23);
 
 void void_matrix(neopixel::Pixel* aux, int tam=25){
-    
     for(int i=0;i<tam;i++){
         aux[i].red=0;
         aux[i].green=0;
@@ -99,30 +98,28 @@ int main() {
     
     neopixel::PixelArray array(DATA_PIN);
     
-    
-    while(true){
-        float pot = ain.read() * 100.0f;
-        if(pot == 0){
+    i=0;
+    while(true) {
         
-            copo(vector);
-            array.update(vector,25);
-           // if(pushbutton){
-                //musica
-             //}
-             
-            
-        }else if(pot > 0 && pot <50){
-            
-            copo2(vector);
-            array.update(vector,25);
-                
-        }else{
-            
-            copo(vector);
-            array.update(vector,25);
-            
-        }
-       wait_ms(500);
+      if(i == 0) {
+	
+	copo(vector);
+	array.update(vector,25);
+	// if(pushbutton){
+	//musica
+	//}
+	
+	
+      }else {
+	
+	copo2(vector);
+	array.update(vector,25);
+	
+      }
+
+      wait_ms(500);
+      i++;
+      i = i % 2;
     }
     
     
